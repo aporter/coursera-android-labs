@@ -1,0 +1,15 @@
+b)
+	ActivityOne: onCreate(), onStart(), onResume(), onPause(), onStop()
+	ActivityTwo: onCreate(), onStart(), onResume()
+
+c)
+	ActivityOne: onRestart(), onStart(), onResume()
+	ActivityTwo: onPause(), onStop(), onDestroy()
+
+d)
+	ActivityOne: onPause(), onStop()
+	ActivityTwo: onCreate(), onStart(), onResume(), onPause(), onStop()
+
+e)
+	ActivityOne: None
+	ActivityTwo: onRestart(), onStart(), onResume()

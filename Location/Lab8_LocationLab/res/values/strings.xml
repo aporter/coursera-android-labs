@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">LocationLab</string>
+    <string name="footer_text">Get New Place</string>
+    <string name="delete">Delete</string>
+    <string name="place_one">Place One</string>
+    <string name="place_no_country">Place No Country</string>
+    <string name="place_two">Place Two</string>
+    <string name="no_country_string">There is no country at this location</string>
+    <string name="mock_name_united_states_string">United States</string>
+    <string name="the_greenhouse_string">The Greenhouse</string>
+    <string name="berwyn_string">Berwyn</string>
+    <string name="duplicate_location_string">You already have this location badge</string>
+    <string name="flag_image_desc_string">Flag Image</string>
+
+</resources>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item android:id="@+id/menu_still_mode" android:title="@string/still_mode_string"></item>
+    <item android:id="@+id/menu_single_speed" android:title="@string/single_speed_mode_string"></item>
+    <item android:id="@+id/menu_random_mode" android:title="@string/random_speed_mode_string"></item>
+    <item android:id="@+id/quit" android:title="@string/quit_string"></item>
+</menu>

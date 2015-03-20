@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">NotificationsLab</string>
+    <string name="title_activity_test_front_end">TestFrontEndActivity</string>
+    <string name="start_main_activity">Start Main Activity</string>
+    <string name="make_tweets_old">Make Tweets Old</string>
+    <string name="make_tweets_new">Make Tweets New</string>
+    <string name="alert_string">Alert</string>
+    <string name="download_failed_string">Download has failed. Please retry Later.</string>
+    <string name="download_succes_string">Download completed successfully.</string>
+    <string name="download_in_progress_string">Downloading Tweets from Network</string>
+	<string name="notification_sent_string">Notification Area Notification Sent</string>
+</resources>
