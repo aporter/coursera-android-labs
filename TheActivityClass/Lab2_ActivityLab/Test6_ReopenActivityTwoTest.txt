@@ -1,0 +1,4 @@
+onCreate() calls: A
+onStart() calls: B
+onResume() calls: C
+onRestart() calls: D
