@@ -26,6 +26,10 @@ public class ActivityTwo extends Activity {
 	// mCreate, mRestart, mStart and mResume 	
 	// to count calls to onCreate(), onRestart(), onStart() and
 	// onResume(). These variables should not be defined as static.
+	int mCreate = 0;
+	int mRestart = 0;
+	int mStart = 0;
+	int mResume = 0;
 	
 	// You will need to increment these variables' values when their
 	// corresponding lifecycle methods get called.
@@ -36,6 +40,10 @@ public class ActivityTwo extends Activity {
 	// TODO: Create variables for each of the TextViews
 	// named  mTvCreate, mTvRestart, mTvStart, mTvResume.
 	// for displaying the current count of each counter variable
+	TextView mTvCreate;
+	TextView mTvtRestart;
+	TextView mTvStart;
+	TextView mTvResume;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +53,10 @@ public class ActivityTwo extends Activity {
 		// TODO: Assign the appropriate TextViews to the TextView variables
 		// Hint: Access the TextView by calling Activity's findViewById()
 		// textView1 = (TextView) findViewById(R.id.textView1);
+		mTvCreate = (TextView) findViewById(R.id.create);
+		mTvtRestart = (TextView) findViewById(R.id.restart);
+		mTvStart = (TextView) findViewById(R.id.start);
+		mTvResume = (TextView) findViewById(R.id.resume);
 
 
 		
@@ -86,7 +98,8 @@ public class ActivityTwo extends Activity {
 		// TODO:
 		// Update the appropriate count variable
 		// Update the user interface via the displayCounts() method
-
+		mCreate++;
+		displayCounts();
 
 		
 		
@@ -104,7 +117,8 @@ public class ActivityTwo extends Activity {
 		// TODO:
 		// Update the appropriate count variable
 		// Update the user interface
-
+		mStart++;
+		displayCounts();
 
 		
 		
@@ -120,7 +134,8 @@ public class ActivityTwo extends Activity {
 		// TODO:
 		// Update the appropriate count variable
 		// Update the user interface
-
+		mResume++;
+		displayCounts();
 
 	
 	}

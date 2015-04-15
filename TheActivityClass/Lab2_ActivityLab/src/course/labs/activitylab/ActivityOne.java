@@ -27,7 +27,10 @@ public class ActivityOne extends Activity {
 	// mCreate, mRestart, mStart and mResume
 	// to count calls to onCreate(), onRestart(), onStart() and
 	// onResume(). These variables should not be defined as static.
-
+	int mCreate = 0;
+	int mRestart = 0;
+	int mStart = 0;
+	int mResume = 0;
 	// You will need to increment these variables' values when their
 	// corresponding lifecycle methods get called.
 
@@ -42,7 +45,7 @@ public class ActivityOne extends Activity {
 
 		// TODO: Assign the appropriate TextViews to the TextView variables
 		// Hint: Access the TextView by calling Activity's findViewById()
-		// textView1 = (TextView) findViewById(R.id.textView1);
+		TextView textView1 = (TextView) findViewById(R.id.create);
 
 		Button launchActivityTwoButton = (Button) findViewById(R.id.bLaunchActivityTwo);
 		launchActivityTwoButton.setOnClickListener(new OnClickListener() {
@@ -52,12 +55,12 @@ public class ActivityOne extends Activity {
 				// TODO:
 				// Launch Activity Two
 				// Hint: use Context's startActivity() method
-
 				// Create an intent stating which Activity you would like to
 				// start
-				Intent intent = null;
-
+				Intent intent = new Intent(ActivityTwo.class);
 				// Launch the Activity using the intent
+				startActivity(Activity2);
+
 
 			}
 		});
@@ -76,7 +79,9 @@ public class ActivityOne extends Activity {
 
 		// TODO:
 		// Update the appropriate count variable
+		mCreate++;
 		// Update the user interface via the displayCounts() method
+		displayCounts();
 
 	}
 
