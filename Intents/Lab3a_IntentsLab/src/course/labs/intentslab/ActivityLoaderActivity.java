@@ -1,5 +1,7 @@
 package course.labs.intentslab;
 
+import course.labs.activitylab.ActivityOne;
+import course.labs.activitylab.ActivityTwo;
 import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
@@ -47,7 +49,7 @@ public class ActivityLoaderActivity extends Activity {
 		Button implicitActivationButton = (Button) findViewById(R.id.implicit_activation_button);
 		implicitActivationButton.setOnClickListener(new OnClickListener() {
             
-			// Call startImplicitActivation() when pressed
+			// Call startImplicitActivation(onActivityResultonActivityResultonActivityResultonActivityResult) when pressed
 			@Override
 			public void onClick(View v) {
                 
@@ -65,11 +67,11 @@ public class ActivityLoaderActivity extends Activity {
         
 		Log.i(TAG,"Entered startExplicitActivation()");
 		
-		// TODO - Create a new intent to launch the ExplicitlyLoadedActivity class
-		Intent explicitIntent = null;
+		// TODODONE - Create a new intent to launch the ExplicitlyLoadedActivity class
+		Intent explicitIntent = new Intent(ActivityLoaderActivity.this, ExplicitlyLoadedActivity.class);
 		
 		// TODO - Start an Activity using that intent and the request code defined above
-		
+		startActivityForResult(explicitIntent);
         
         
 	}
@@ -107,11 +109,13 @@ public class ActivityLoaderActivity extends Activity {
 		// TODO - Process the result only if this method received both a
 		// RESULT_OK result code and a recognized request code
 		// If so, update the Textview showing the user-entered text.
-
-	
-    
-    
-    
+	    if (requestCode == ACTION_SEND) {
+	        // Make sure the request was successful
+	        if (resultCode == RESULT_OK) {
+	        	mUserTextView.setText(texto);
+	        	??startActivity(new Intent(Intent.ACTION_VIEW, data));
+	        }
+	    }
     
     }
 }
