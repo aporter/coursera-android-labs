@@ -417,7 +417,6 @@ public class BubbleActivity extends Activity {
 		private synchronized boolean moveWhileOnScreen() {
 
 			// TODO - Move the BubbleView
-			// Returns true if the BubbleView has exited the screen
 
 
 			return false;
