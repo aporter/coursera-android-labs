@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="#000000"
+    android:id="@+id/mainL"
+	android:orientation="vertical" >
+	<TextView
+		android:id="@+id/textView1"
+		android:layout_width="match_parent"
+		android:layout_height="120dp"
+		android:layout_margin="5dp"
+		android:background="#b950dc" />
+	<LinearLayout
+		android:layout_width="fill_parent"
+		android:layout_height="0dp"
+		android:layout_weight="1"
+		android:orientation="horizontal" >
+		<TextView
+			android:id="@+id/textView2"
+			android:layout_width="73dp"
+			android:layout_height="fill_parent"
+			android:layout_margin="5dp"
+			android:background="#64a5cd" />
+		<TextView
+			android:id="@+id/textView3"
+			android:layout_width="73dp"
+			android:layout_height="fill_parent"
+			android:layout_margin="5dp"
+			android:background="#ffffff" />
+		<TextView
+			android:id="@+id/textView4"
+			android:layout_width="fill_parent"
+			android:layout_height="fill_parent"
+			android:layout_margin="5dp"
+			android:background="#73eb41" />
+	</LinearLayout>
+	<LinearLayout
+		android:layout_width="fill_parent"
+		android:layout_height="180dp"
+		android:orientation="vertical" >
+		<TextView
+			android:id="@+id/textView5"
+			android:layout_width="fill_parent"
+			android:layout_height="60dp"
+			android:layout_margin="5dp"
+			android:background="#999999" />
+		<TextView
+			android:id="@+id/textView6"
+			android:layout_width="fill_parent"
+			android:layout_height="60dp"
+			android:layout_margin="5dp"
+			android:background="#cdc85a"/>
+		<TextView
+			android:id="@+id/textView7"
+			android:layout_width="fill_parent"
+			android:layout_height="60dp"
+			android:layout_margin="5dp"
+			android:background="#fa8732"/>
+	</LinearLayout>
+	<SeekBar
+		android:id="@+id/slide"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:max="255"
+		android:progress="0"
+		android:background="#000000" />
+</LinearLayout>
