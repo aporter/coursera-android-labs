@@ -11,11 +11,13 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.os.Build;
+import android.app.DialogFragment;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 
 public class MainActivity extends ActionBarActivity {
 
+	static private final String mainTitle = "Modern Art UI";
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -23,6 +25,7 @@ public class MainActivity extends ActionBarActivity {
 		//getWindow().getDecorView().setBackgroundColor(Color.WHITE);
 		//getWindow().getDecorView().getBackground().setColorFilter(Color.parseColor(colorCode), PorterDuff.Mode.DARKEN);
 		setContentView(R.layout.activity_main);
+		setTitle(mainTitle);
 		//ListAdapter mAdapter = new BaseAdapter(getApplicationContext());
 		SystemClock.sleep(3000);
 		setBackGroundColor(Color.CYAN, getWindow().getDecorView());
@@ -50,7 +53,62 @@ public class MainActivity extends ActionBarActivity {
 	private void setBackGroundColor (int color, View view) {
 		view.getBackground().setColorFilter(color, PorterDuff.Mode.DARKEN);
 	}
+	
+	
+	
+	
+	
 	/**
 	 * A placeholder fragment containing a simple view.
 	 */
+	class MomaDialogFragment extends DialogFragment {
+	    @Override
+	    public Dialog onCreateDialog(Bundle savedInstanceState) {
+	        // Use the Builder class for convenient dialog construction
+	        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+	        builder.setMessage(R.string.dialog_fire_missiles)
+	               .setPositiveButton(R.string.fire, new DialogInterface.OnClickListener() {
+	                   public void onClick(DialogInterface dialog, int id) {
+	                       // FIRE ZE MISSILES!
+	                   }
+	               })
+	               .setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
+	                   public void onClick(DialogInterface dialog, int id) {
+	                       // User cancelled the dialog
+	                   }
+	               });
+	        // Create the AlertDialog object and return it
+	        return builder.create();
+	    }
+	}
+
+		
+		final Button NotNowlButton = (Button) findViewById(R.id.noButton);
+		cancelButton.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				// TODO - Indicate result and finish
+				setResult(RESULT_CANCELED);
+				finish();
+	            
+			}
+		final Button NotNowlButton = (Button) findViewById(R.id.noButton);
+		cancelButton.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				// TODO - Indicate result and finish
+				setResult(RESULT_CANCELED);
+				finish();
+	            
+			}
+		});	
+		public void openWebPage(String url) {
+		    Uri webpage = Uri.parse(url);
+		    Intent intent = new Intent(Intent.ACTION_VIEW, webpage);
+		    if (intent.resolveActivity(getPackageManager()) != null) {
+		        startActivity(intent);
+		    }
+		}
+	}
+
 }
