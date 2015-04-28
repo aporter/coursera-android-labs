@@ -17,30 +17,29 @@ import android.content.DialogInterface;
 import android.content.Intent;
 
 public class MainActivity extends ActionBarActivity {
-
-	// IDs for menu items
+	//Initializing variables
 	private static final int DECREMENT = 0;
 	private static final int INCREMENT = 1;
 	private static final int LAUNCH_DIALOG = Menu.FIRST;
 	private static final String mainTitle = "Modern Art UI";
 	private static final String URL = "http://www.moma.org";
-	private final String initialColorTextView1 = "330000";
-	private final String initialColorTextView2 = "33ff77";
+	private final String initialColorTextView1 = "99ffcc";
+	private final String initialColorTextView2 = "00ffee";
 	private final String initialColorTextView3 = "ffffff";
-	private final String initialColorTextView4 = "cc0022";
-	private final String initialColorTextView5 = "808080";
-	private final String initialColorTextView6 = "55ffff";
-	private final String initialColorTextView7 = "66eeff";
+	private final String initialColorTextView4 = "99ff33";
+	private final String initialColorTextView5 = "aaaaaa";
+	private final String initialColorTextView6 = "cc0044";
+	private final String initialColorTextView7 = "ffff77";
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		
 		setContentView(R.layout.activity_main);
 		setTitle(mainTitle);
+		// Initializing color background of the 7 text views
 		TextView textView1 = (TextView) findViewById(R.id.textView1);
 		setBackGroundColor(initialColorTextView1, textView1, 0, DECREMENT);
 		TextView textView2 = (TextView) findViewById(R.id.textView2);
-		setBackGroundColor(initialColorTextView2, textView2, 0, INCREMENT);
+		setBackGroundColor(initialColorTextView2, textView2, 0, DECREMENT);
 		TextView textView3 = (TextView) findViewById(R.id.textView3);
 		setBackGroundColor(initialColorTextView3, textView3, 0, DECREMENT);
 		TextView textView4 = (TextView) findViewById(R.id.textView4);
@@ -51,32 +50,36 @@ public class MainActivity extends ActionBarActivity {
 		setBackGroundColor(initialColorTextView6, textView6, 0, DECREMENT);
 		TextView textView7 = (TextView) findViewById(R.id.textView7);
 		setBackGroundColor(initialColorTextView7, textView7, 0, DECREMENT);
+		// Overriding the methods of the seekbar
 		SeekBar seekBar = (SeekBar) findViewById(R.id.slide);
-		
 		seekBar.setOnSeekBarChangeListener(new OnSeekBarChangeListener() {
 			@Override
+			// Everytime the user slides the progress bar, we increment/decrement the
+			// G component of the RGB color matrix of each textview background
 			public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser){
 				TextView textView1 = (TextView) findViewById(R.id.textView1);
 				setBackGroundColor(initialColorTextView1, textView1, progress, DECREMENT);
 				TextView textView2 = (TextView) findViewById(R.id.textView2);
-				setBackGroundColor(initialColorTextView2, textView2, progress, INCREMENT);
+				setBackGroundColor(initialColorTextView2, textView2, progress, DECREMENT);
 				TextView textView4 = (TextView) findViewById(R.id.textView4);
 				setBackGroundColor(initialColorTextView4, textView4, progress, DECREMENT);
 				TextView textView6 = (TextView) findViewById(R.id.textView6);
-				setBackGroundColor(initialColorTextView6, textView6, progress, DECREMENT);
+				setBackGroundColor(initialColorTextView6, textView6, progress, INCREMENT);
 				TextView textView7 = (TextView) findViewById(R.id.textView7);
 				setBackGroundColor(initialColorTextView7, textView7, progress, DECREMENT);
 			}
 			@Override
+			// Nothing to do here
 			public void onStartTrackingTouch(SeekBar seekBar) {
 			}
 			@Override
+			// Nothing to do here
 			public void onStopTrackingTouch(SeekBar seekBar) {
 			}
-
 		});
-
 	}
+	// Increment/decrement the G component of the RGB color matrix of the view background by colorOffset,
+	// depending on the colorFlag (INCREMENT or DECREMENT)
 	public void setBackGroundColor (String colorHexString, View view, int colorOffset, int colorFlag) {
 		int newColor = 0;
 		int colorDecimal = Integer.parseInt(colorHexString, 16);
@@ -89,7 +92,6 @@ public class MainActivity extends ActionBarActivity {
 		Log.d("DEBUG","Color code is "+colorCode);
 		view.setBackgroundColor(Color.parseColor(colorCode));
 	}
-
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		super.onCreateOptionsMenu(menu);
@@ -100,36 +102,33 @@ public class MainActivity extends ActionBarActivity {
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
 		case LAUNCH_DIALOG:
+			// Call the alert dialog builder
 			AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(MainActivity.this);
 			alertDialogBuilder.setTitle("Click bellow to learn more about Modern Art!");
-			// set positive button: Yes message
+			// Set positive button and call browser with the MoMa url
 			alertDialogBuilder.setPositiveButton("Visit the MOMA site now!",new DialogInterface.OnClickListener() {
-			       public void onClick(DialogInterface dialog,int id) {
-			           // go to a new activity of the app
-			    	   Uri webpage = Uri.parse(URL);
-			    	   Intent intent = new Intent(Intent.ACTION_VIEW, webpage);
-			    	   if (intent.resolveActivity(getPackageManager()) != null) {
-			    	   	startActivity(intent);
-			    	   }
-			       }
-			     });
-			// set negative button: No message
+				public void onClick(DialogInterface dialog,int id) {
+					Uri webpage = Uri.parse(URL);
+					Intent intent = new Intent(Intent.ACTION_VIEW, webpage);
+					if (intent.resolveActivity(getPackageManager()) != null) {
+						startActivity(intent);
+					}
+				}
+			});
+			// Set negative button and cancel the dialog
 			alertDialogBuilder.setNegativeButton("Not Now",new DialogInterface.OnClickListener() {
-			       public void onClick(DialogInterface dialog,int id) {
-			           // cancel the alert box and put a Toast to the user
-			           dialog.cancel();
-			           Toast.makeText(getApplicationContext(), "Thanks! Maybe next time?",
-			                   Toast.LENGTH_LONG).show();
-			       }
-			   });
-			 
+				public void onClick(DialogInterface dialog,int id) {
+					// cancel the alert box and put a Toast to the user
+					dialog.cancel();
+					Toast.makeText(getApplicationContext(), "Thanks! Maybe next time?",Toast.LENGTH_LONG).show();
+				}
+			});
 			AlertDialog alertDialog = alertDialogBuilder.create();
-			// show alert
+			// Show the alert Dialog
 			alertDialog.show();
 			return true;
 		default:
 			return super.onOptionsItemSelected(item);
 		}
-
 	}
 }
