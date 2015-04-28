@@ -16,7 +16,6 @@
 		    android:layout_width="0dp"
 		    android:layout_height="fill_parent"
 		    android:layout_margin="2dp"
-		    android:background="#64a5cd"
 			android:layout_weight="3" />
 
 		<TextView
@@ -24,7 +23,6 @@
 		    android:layout_width="0dp"
 		    android:layout_height="fill_parent"
 		    android:layout_margin="2dp"
-		    android:background="#ffffff"
 			android:layout_weight="4" />
 
 		<TextView
@@ -32,7 +30,6 @@
 		    android:layout_width="0dp"
 		    android:layout_height="fill_parent"
 		    android:layout_margin="2dp"
-		    android:background="#73eb41"
 			android:layout_weight="2" />
 
 	</LinearLayout>
@@ -51,15 +48,13 @@
 				android:layout_height="0dp"
 				android:layout_width="fill_parent"
 				android:layout_margin="2dp"
-				android:layout_weight="3"
-				android:background="#999999" />
+				android:layout_weight="3"/>
 			<TextView
 				android:id="@+id/textView5"
 				android:layout_height="0dp"
 				android:layout_width="fill_parent"
 				android:layout_margin="2dp"
-				android:layout_weight="4"
-				android:background="#cdc85a"/>
+				android:layout_weight="4"/>
 		</LinearLayout>
 		<LinearLayout
 			android:layout_width="0dp"
@@ -71,16 +66,14 @@
 				android:layout_height="fill_parent"
 				android:layout_width="0dp"
 				android:layout_margin="2dp"
-				android:layout_weight="2"
-				android:background="#999999" />
+				android:layout_weight="2"/>
 
 			<TextView
 			    android:id="@+id/textView7"
 			    android:layout_width="0dp"
 			    android:layout_height="fill_parent"
 			    android:layout_margin="2dp"
-			    android:layout_weight="3"
-			    android:background="#cdc85a" />
+			    android:layout_weight="3"/>
 
 		</LinearLayout>
 	</LinearLayout>
@@ -89,6 +82,5 @@
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:max="255"
-		android:progress="0"
-		android:background="#000000" />
+		android:progress="0"/>
 </LinearLayout>

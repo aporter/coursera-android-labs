@@ -2,21 +2,6 @@
 <resources>
 
     <string name="app_name">IhateModernArt</string>
-    <string name="open_page_button_msg">Go to the MoMa site.</string>
-    <string name="dismiss_dialog_button_msg">Not now, go fund yourself</string>
-    <string name="dialog_frag_msg">Hello world!</string>
-    <string name="action_settings">Escolhe opções de diálogo</string>
-    <string name="title_activity_browsing">BrowsingActivity</string>
-    <string name="seekStartTextView1Color">33ff00</string>
-    <string name="seekStopTextView1Color">330000</string>
-    <string name="seekStartTextView2Color">330077</string>
-    <string name="seekStopTextView2Color">33ff77</string>
-    <string name="seekStartTextView3Color">00bb44</string>
-    <string name="seekStopTextView3Color">01ba44</string>
-    <string name="seekStartTextView4Color">ccff22</string>
-    <string name="seekStopTextView4Color">cc0022</string>
-    <string name="seekStartTextView5Color">99bb77</string>
-    <string name="seekStopTextView5Color">9aba77</string>
-    <string name="seekStartTextView6Color">99eeff</string>
-    <string name="seekStopTextView6Color">9aedff</string>
+    <string name="action_settings">Options</string>
+
 </resources>
