@@ -21,20 +21,19 @@ public class MainActivity extends ActionBarActivity {
 	private static final int DECREMENT = 0;
 	private static final int INCREMENT = 1;
 	private static final int LAUNCH_DIALOG = Menu.FIRST;
-	private static final String mainTitle = "Modern Art UI";
-	private static final String URL = "http://www.moma.org";
-	private final String initialColorTextView1 = "99ffcc";
-	private final String initialColorTextView2 = "00ffee";
-	private final String initialColorTextView3 = "ffffff";
-	private final String initialColorTextView4 = "99ff33";
-	private final String initialColorTextView5 = "aaaaaa";
-	private final String initialColorTextView6 = "cc0044";
-	private final String initialColorTextView7 = "ffff77";
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		final String mainTitle = getResources().getString(R.string.mainTitle);
 		setTitle(mainTitle);
+		final String initialColorTextView1 = getResources().getString(R.string.initialColorTextView1);
+		final String initialColorTextView2 = getResources().getString(R.string.initialColorTextView2);
+		final String initialColorTextView3 = getResources().getString(R.string.initialColorTextView3);
+		final String initialColorTextView4 = getResources().getString(R.string.initialColorTextView4);
+		final String initialColorTextView5 = getResources().getString(R.string.initialColorTextView5);
+		final String initialColorTextView6 = getResources().getString(R.string.initialColorTextView6);
+		final String initialColorTextView7 = getResources().getString(R.string.initialColorTextView7);
 		// Initializing color background of the 7 text views
 		TextView textView1 = (TextView) findViewById(R.id.textView1);
 		setBackGroundColor(initialColorTextView1, textView1, 0, DECREMENT);
@@ -108,7 +107,7 @@ public class MainActivity extends ActionBarActivity {
 			// Set positive button and call browser with the MoMa url
 			alertDialogBuilder.setPositiveButton("Visit the MOMA site now!",new DialogInterface.OnClickListener() {
 				public void onClick(DialogInterface dialog,int id) {
-					Uri webpage = Uri.parse(URL);
+					Uri webpage = Uri.parse(getResources().getString(R.string.momaUrl));
 					Intent intent = new Intent(Intent.ACTION_VIEW, webpage);
 					if (intent.resolveActivity(getPackageManager()) != null) {
 						startActivity(intent);
