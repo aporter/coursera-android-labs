@@ -47,7 +47,7 @@ public class ActivityLoaderActivity extends Activity {
 		Button implicitActivationButton = (Button) findViewById(R.id.implicit_activation_button);
 		implicitActivationButton.setOnClickListener(new OnClickListener() {
             
-			// Call startImplicitActivation() when pressed
+			// Call startImplicitActivation(onActivityResultonActivityResultonActivityResultonActivityResult) when pressed
 			@Override
 			public void onClick(View v) {
                 
@@ -65,11 +65,11 @@ public class ActivityLoaderActivity extends Activity {
         
 		Log.i(TAG,"Entered startExplicitActivation()");
 		
-		// TODO - Create a new intent to launch the ExplicitlyLoadedActivity class
-		Intent explicitIntent = null;
+		// TODODONE - Create a new intent to launch the ExplicitlyLoadedActivity class
+		Intent explicitIntent = new Intent(ActivityLoaderActivity.this, ExplicitlyLoadedActivity.class);
 		
 		// TODO - Start an Activity using that intent and the request code defined above
-		
+		startActivityForResult(explicitIntent,GET_TEXT_REQUEST_CODE);
         
         
 	}
@@ -79,23 +79,22 @@ public class ActivityLoaderActivity extends Activity {
 	private void startImplicitActivation() {
         
 		Log.i(TAG, "Entered startImplicitActivation()");
-        
 		// TODO - Create a base intent for viewing a URL
 		// (HINT:  second parameter uses Uri.parse())
 		
-        Intent baseIntent = null;
+        Intent baseIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(URL));
 		
 		// TODO - Create a chooser intent, for choosing which Activity
 		// will carry out the baseIntent
 		// (HINT: Use the Intent class' createChooser() method)
-		Intent chooserIntent = null;
+		Intent chooserIntent = Intent.createChooser(baseIntent,CHOOSER_TEXT);
         
         
 		Log.i(TAG,"Chooser Intent Action:" + chooserIntent.getAction());
         
         
 		// TODO - Start the chooser Activity, using the chooser intent
-
+		startActivity(chooserIntent);
         
 	}
     
@@ -107,11 +106,12 @@ public class ActivityLoaderActivity extends Activity {
 		// TODO - Process the result only if this method received both a
 		// RESULT_OK result code and a recognized request code
 		// If so, update the Textview showing the user-entered text.
-
-	
-    
-    
-    
+	    if (requestCode == GET_TEXT_REQUEST_CODE) {
+	        // Make sure the request was successful
+	        if (resultCode == RESULT_OK) {
+	        	mUserTextView.setText(data.getStringExtra(Intent.EXTRA_TEXT));
+	        }
+	    }
     
     }
 }

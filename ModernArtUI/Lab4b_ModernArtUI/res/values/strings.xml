@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="app_name">IhateModernArt</string>
+	<string name="mainTitle">Modern Art UI</string>
+	<string name="action_settings">Options</string>
+	<string name="initialColorTextView1">99ffcc</string>
+	<string name="initialColorTextView2">00ffee</string>
+	<string name="initialColorTextView3">ffffff</string>
+	<string name="initialColorTextView4">99ff33</string>
+	<string name="initialColorTextView5">aaaaaa</string>
+	<string name="initialColorTextView6">cc0044</string>
+	<string name="initialColorTextView7">ffff77</string>
+	<string name="momaUrl">http://www.moma.org</string>
+</resources>

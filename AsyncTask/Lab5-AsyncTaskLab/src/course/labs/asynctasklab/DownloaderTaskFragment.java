@@ -16,6 +16,8 @@ public class DownloaderTaskFragment extends Fragment {
 
 	private DownloadFinishedListener mCallback;
 	private Context mContext;
+	private DownLoaderTask mDownloaderTask;
+	final Bundle mRetArgs;
 	
 	@SuppressWarnings ("unused")
 	private static final String TAG = "Lab-Threads";
@@ -28,12 +30,18 @@ public class DownloaderTaskFragment extends Fragment {
 		setRetainInstance(true);
 		
 		// TODO: Create new DownloaderTask that "downloads" data
+		mDownloaderTask = new DownLoaderTask();
 
         
 		
 		// TODO: Retrieve arguments from DownloaderTaskFragment
 		// Prepare them for use with DownloaderTask. 
+		//mRetArgs = mDownloaderTask.getArguments();
+		private DownloaderTaskFragment mDownloaderFragment;
 
+		mDownloaderFragment = new DownloaderTaskFragment();
+		Bundle args = new Bundle();
+		mRetArgs = mDownloaderTask.getArguments();
         
         
         
@@ -73,20 +81,10 @@ public class DownloaderTaskFragment extends Fragment {
 	// out). Ultimately, it must also pass newly available data back to 
 	// the hosting Activity using the DownloadFinishedListener interface.
 
-//	public class DownloaderTask extends ... {
-	
-
-    
-    
-    
-    
-    
-    
-    
+	public class DownLoaderTask extends AsyncTask<Integer,Void,String> {
         // TODO: Uncomment this helper method
 		// Simulates downloading Twitter data from the network
 
-        /*
          private String[] downloadTweets(Integer resourceIDS[]) {
 			final int simulatedDelay = 2000;
 			String[] feeds = new String[resourceIDS.length];
@@ -124,10 +122,8 @@ public class DownloaderTaskFragment extends Fragment {
 
 			return feeds;
 		}
-         */
 
-
-    
+	}
     
     
     
