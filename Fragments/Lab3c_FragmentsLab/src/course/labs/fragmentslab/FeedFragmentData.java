@@ -34,40 +34,54 @@ public class FeedFragmentData {
 	private void loadFeeds() {
 
 		for (int id : IDS) {
-
-			InputStream inputStream = mContext.getResources().openRawResource(
-					id);
-			BufferedReader reader = new BufferedReader(new InputStreamReader(
-					inputStream));
-
-			StringBuffer buffer = new StringBuffer("");
-			
-			
-			// Read raw data from resource file
-			
+			InputStream inputStream = null;
+			BufferedReader reader = null;
 			try {
+				inputStream = mContext.getResources().openRawResource(
+						id);
+				reader = new BufferedReader(new InputStreamReader(
+						inputStream));
+				StringBuffer buffer = new StringBuffer("");
 
-				String line = "";
-				while ((line = reader.readLine()) != null) {
-				
-					buffer.append(line);
+
+				// Read raw data from resource file
+
+				try {
+
+					String line = "";
+					while ((line = reader.readLine()) != null) {
+
+						buffer.append(line);
+					}
+
+				} catch (IOException e) {
+					Log.i(TAG, "IOException");
 				}
-			
-			} catch (IOException e) {
-				Log.i(TAG, "IOException");
+
+				// Convert raw data into a String
+
+				JSONArray feed = null;
+				try {
+					feed = new JSONArray(buffer.toString());
+				} catch (JSONException e) {
+					Log.i(TAG, "JSONException");
+				}
+
+				mFeeds.put(id, procFeed(feed));
+			} finally {
+				if (reader != null) {
+					try {
+						reader.close();
+					} catch (IOException ioe) {}
+				}
+				if (inputStream != null) {
+					try {
+						inputStream.close();
+					} catch (IOException ioe) {}
+				}
 			}
 
-			// Convert raw data into a String
 
-			JSONArray feed = null;
-			try {
-				feed = new JSONArray(buffer.toString());
-			} catch (JSONException e) {
-				Log.i(TAG, "JSONException");
-			}
-
-			mFeeds.put(id, procFeed(feed));
-		
 		}
 	}
 	
