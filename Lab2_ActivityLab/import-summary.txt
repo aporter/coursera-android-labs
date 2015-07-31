@@ -1,0 +1,61 @@
+ECLIPSE ANDROID PROJECT IMPORT SUMMARY
+======================================
+
+Ignored Files:
+--------------
+The following files were *not* copied into the new Gradle project; you
+should evaluate whether these are still needed in your project and if
+so manually move them:
+
+* ActivityLifecycleWalkthrough.pdf
+* ActivityNoReconfig.mp4
+* ActivityReconfig.mp4
+* Lab-Activity.pdf
+* Test1_StartActivityOneTest.txt
+* Test2_DoubleRotateActivityOneTest.txt
+* Test3_StartActivityTwoTest.txt
+* Test4_DoubleRotateActivityTwoTest.txt
+* Test5_CloseActivityTwoTest.txt
+* Test6_ReopenActivityTwoTest.txt
+* ic_launcher-web.png
+* proguard-project.txt
+* warmupSolution.txt
+
+Replaced Jars with Dependencies:
+--------------------------------
+The importer recognized the following .jar files as third party
+libraries and replaced them with Gradle dependencies instead. This has
+the advantage that more explicit version information is known, and the
+libraries can be updated automatically. However, it is possible that
+the .jar file in your project was of an older version than the
+dependency we picked, which could render the project not compileable.
+You can disable the jar replacement in the import wizard and try again:
+
+robotium-solo-5.3.1.jar => com.jayway.android.robotium:robotium-solo:5.3.1
+
+Moved Files:
+------------
+Android Gradle projects use a different directory structure than ADT
+Eclipse projects. Here's how the projects were restructured:
+
+* AndroidManifest.xml => app\src\main\AndroidManifest.xml
+* res\ => app\src\main\res\
+* src\ => app\src\main\java\
+* Test\libs\robotium-solo-5.3.1.jar => app\libs\robotium-solo-5.3.1.jar
+* Test\res\ => app\src\androidTest\res\
+* Test\src\ => app\src\androidTest\java\
+
+Next Steps:
+-----------
+You can now build the project. The Gradle project needs network
+connectivity to download dependencies.
+
+Bugs:
+-----
+If for some reason your project does not build, and you determine that
+it is due to a bug or limitation of the Eclipse to Gradle importer,
+please file a bug at http://b.android.com with category
+Component-Tools.
+
+(This import summary is for your information only, and can be deleted
+after import once you are satisfied with the results.)

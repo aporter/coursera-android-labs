@@ -1,4 +1,4 @@
-onCreate() calls: A
-onStart() calls: B
-onResume() calls: C
-onRestart() calls: D
+onCreate() calls: 3
+onStart() calls: 3
+onResume() calls: 3
+onRestart() calls: 0
