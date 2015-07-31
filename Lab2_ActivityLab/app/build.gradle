@@ -1,0 +1,26 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 18
+    buildToolsVersion "22.0.1"
+
+    defaultConfig {
+        applicationId "course.labs.activitylab"
+        minSdkVersion 14
+        targetSdkVersion 19
+
+        testApplicationId "course.labs.activitylab.tests"
+        testInstrumentationRunner "android.test.InstrumentationTestRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+    }
+}
+
+dependencies {
+    androidTestCompile 'com.jayway.android.robotium:robotium-solo:5.3.1'
+}
