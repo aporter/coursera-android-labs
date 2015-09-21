@@ -84,7 +84,7 @@ public class MainActivity extends Activity implements SelectionListener,
 			installDownloaderTaskFragment();
 
 			String progressMessage = getString(R.string.download_in_progress_string);
-			Toast.makeText(this, progressMessage, Toast.LENGTH_SHORT);
+			Toast.makeText(this, progressMessage, Toast.LENGTH_SHORT).show();
 
 			// Set up a BroadcastReceiver to receive an Intent when download
 			// finishes.
