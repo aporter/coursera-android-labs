@@ -184,7 +184,7 @@ public class DownloaderTaskFragment extends Fragment {
 
 								PendingIntent pendingIntent =
 										PendingIntent.getActivity(
-										getActivity(),
+										mContext,
 										0,
 										restartMainActivityIntent,
 										PendingIntent.FLAG_UPDATE_CURRENT);
@@ -200,7 +200,7 @@ public class DownloaderTaskFragment extends Fragment {
 								// Set the notification View's text to
 								// reflect whether the download completed
 								// successfully
-								mContentView.setTextViewText(R.id.text, "Download completed");
+								mContentView.setTextViewText(R.id.text, successMsg);
 
 
 								// Use the Notification.Builder class to
