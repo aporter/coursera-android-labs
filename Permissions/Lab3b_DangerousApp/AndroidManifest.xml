@@ -13,7 +13,9 @@
           define a custom permission with name
     		  "course.labs.permissions.DANGEROUS_ACTIVITY_PERM" 
           and "dangerous" protection level.
-    -->
+is this permission dengerious for my app    
+
+-->
 
     <application
         android:allowBackup="true"
